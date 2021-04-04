@@ -34,7 +34,7 @@ void setup(void)
 
 void loop(void) 
 {
-    int16_t adc0; // 16 bit interger to store output of analog channel zero
+    int16_t adc0; // 16 bit integer to store output of analog channel zero
     
     adc0 = ads.readADC_SingleEnded(0); // read ANO values
     temp = (adc0 * 0.1875)/1000; // convert ADC value into voltage
