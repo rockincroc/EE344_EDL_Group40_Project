@@ -49,7 +49,7 @@ void loop(void)
     Serial.println(sensorValue);
     
     lastwrittento = (lastwrittento+1)%EEmax;
-    EEPROM.write(lastwrittento, (int)(temp*5));
+    EEPROM.write(lastwrittento, (int)(temp*8));
     EEPROM.commit();
     
     Serial.print("\tTempertaure: ");
@@ -80,7 +80,7 @@ void loop(void)
           client.println(i*10);
           client.println("seconds is ");
           int readval = (EEmax + lastwrittento - i - 2)%EEmax;
-          client.println(EEPROM.read(readval)/5.0);
+          client.println(EEPROM.read(readval)/8.0);
           client.println("*C</p>\n");
         }
         client.println("</body></html>"); 
